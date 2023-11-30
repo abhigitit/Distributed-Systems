@@ -1,4 +1,9 @@
 # Distributed-Systems
+## Resources
+* For deeper understanding - https://www.youtube.com/watch?v=UEAMfLPZZhE&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB&index=1
+* For more theoretical understanding - https://www.youtube.com/watch?v=cQP8WApzIQQ&list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB&index=1
+* For hands on development of few distributed system algorithms - https://servicenow.udemy.com/course/distributed-systems-cloud-computing-with-java/
+  
 ## Problems of a Centralized System
 * Performance and Storage
 * Single Point of failure - loss of money and trust
