@@ -6,8 +6,8 @@
 * Security and Privacy
 
 ## Distributed System
-** * A set of cooperating computers communicating with each other over the network to get some coherent task done.**
-** * A Distributed System is a system of several processes running on different computers, communicating with each other through the network.**
+**A set of cooperating computers communicating with each other over the network to get some coherent task done --OR--**
+**A Distributed System is a system of several processes running on different computers, communicating with each other through the network and are sharing a state or working together to achieve a common goal.**
 
 
 > Try everything else (single computer) before even trying distributed systems
