@@ -16,6 +16,8 @@
 
 
 > Try everything else (single computer) before even trying distributed systems
+> Distributed Systems is ~5% of how to make things work that are spread across space and ~95% of handling scenarios when things don't work due to network partition.
+> In distributed system, failure is not a question of if?, but a question of when?
 
 ## Why do we consider ds?
 * Parallelism (performance; lots of disk arms moving parallelly, lots of cpu cores working for single task)
@@ -34,6 +36,57 @@ Performance: Requires careful design to achieve Parallelism.
 a distributed system as all the processes belong to a single host**
 
 **What if we launch processes on different host machines and make them communicate via network to perform a job? -> That's it! this is distributed system.**
+
+
+## How to distribute the work among the nodes in a cluster?
+## Attempt 1 - Manually distribute 
+This doesn't work as we can get millions of tasks per minute and they need to get assigned to the nodes in the cluster
+
+## Attempt 2 - Manually elect a leader
+This leader node will be incharge of distributing the work and collecting results.
+But, what if the leader fails?
+
+## Attempt 3 - Automatic Leader Election
+Elect a leader and all other nodes closely monitor the leader's health.
+If the leader fails, elect a new leader.
+If the old leader comes back, it should realize that things have changed and it should join as a regular node.
+WORKS!!
+
+## Challenges with Attempt 3
+* Automatic leader election is not a trivial task to solve, even among people.
+* Arriving to an agreement on a leader in a large cluster of nodes is even harder.
+* By default, each node knows about itself.
+* So we require a service registery.
+* We need failure detection mechanism that triggers automatic leader election
+
+**We need a distributed system algorithm for consensu and failover**
+* We already have Apache Zookeeper - High Performance Distributed Coordination Service**
+* Kafka, Hadoop, HBase etc use Zookeeper**
+* Provides an abstarction layer for higher level distributed algorithms.
+* Zookeeper provides high availability and reliability.
+* In prodcution, it runs in a cluster of an odd number od nodes, higher than 3.
+* We will make our nodes communicate to zookeeper cluster
+
+##Zookeeper terminology
+* It provides abstraction like a file system.
+* Znode: Hybrid between a file and directory; Can store any date inside(like a file) and can have children nodes (like directory)
+* Persistent Znode: persist between sessions
+* Ephemeral Znode: is deleted when the session ends
+
+##Leader election algorithm using zookeeper
+* Each node submits its candidacy to become leader under election znode
+* The znode which is the first child(has the smallest number/id) of election znode will be the leader. (Could be in the order of candidacy submission)
+  
+
+
+  
+
+
+
+
+
+
+
 
 
 
