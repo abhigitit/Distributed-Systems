@@ -15,7 +15,7 @@
 **A Distributed System is a system of several processes running on different computers, communicating with each other through the network and are sharing a state or working together to achieve a common goal.**
 
 
-> Try everything else (single computer) before even trying distributed systems
+> Try everything else (single computer) before even trying distributed systems. 
 > Distributed Systems is ~5% of how to make things work that are spread across space and ~95% of handling scenarios when things don't work due to network partition.
 > In distributed system, failure is not a question of if?, but a question of when?
 
