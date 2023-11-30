@@ -67,13 +67,13 @@ WORKS!!
 * In prodcution, it runs in a cluster of an odd number od nodes, higher than 3.
 * We will make our nodes communicate to zookeeper cluster
 
-##Zookeeper terminology
+## Zookeeper terminology
 * It provides abstraction like a file system.
 * Znode: Hybrid between a file and directory; Can store any date inside(like a file) and can have children nodes (like directory)
 * Persistent Znode: persist between sessions
 * Ephemeral Znode: is deleted when the session ends
 
-##Leader election algorithm using zookeeper
+## Leader election algorithm using zookeeper
 * Each node submits its candidacy to become leader under election znode
 * The znode which is the first child(has the smallest number/id) of election znode will be the leader. (Could be in the order of candidacy submission)
   
