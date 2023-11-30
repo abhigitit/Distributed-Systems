@@ -20,6 +20,16 @@
 
 ## Challenges with distributed systems:
 Failure patterns: In a single computer, either computer is working or not working; but in ds, we have multiple systems and networks. so we can have partial failures
-Performance: Requires careful design to achieve Parallelism
+Performance: Requires careful design to achieve Parallelism.
+
+## What is a process?
+**A program loaded into the memory is then called a process. --OR-- Running instance of a program.**
+
+**All the processes running on single computer share the resources of the host and communicate via file system, network or some advanced techniques provided by the OS. This is not
+a distributed system as all the processes belong to a single host**
+
+**What if we launch processes on different host machines and make them communicate via network to perform a job? -> That's it! this is distributed system.**
+
+
 
   
